@@ -14,7 +14,7 @@ to DataBroker.
 # General {#general}
 
 The main user documentation of Bagel can be found at:
-https://githgub.com/dfki-ric/bagel_wiki/wiki
+https://github.com/dfki-ric/bagel_wiki/wiki
 
 The API documentation of `osg_graph_viz` can be build in the `doc`
 sub-folder with the `make` command. The documentation is build into
