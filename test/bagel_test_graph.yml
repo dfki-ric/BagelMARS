@@ -1,0 +1,97 @@
+model: bagel
+nodes:
+  - name: PIPE1
+    type: PIPE
+    inputs:
+      - name: in1
+        idx: 0
+        bias: 0
+        default: 0
+        type: SUM
+    outputs:
+      - name: out1
+    id: 1
+    order: 1
+    pos:
+      x: 960
+      y: 773
+  - name: in1
+    type: INPUT
+    outputs:
+      - name: out1
+    id: 2
+    order: 2
+    pos:
+      x: 833
+      y: 759
+  - name: PIPE1/out1
+    type: OUTPUT
+    inputs:
+      - name: in1
+        bias: 0
+        default: 0
+        type: SUM
+    id: 3
+    order: 3
+    pos:
+      x: 1114
+      y: 762
+edges:
+  - fromNode: in1
+    fromNodeOutput: out1
+    toNode: PIPE1
+    toNodeInput: in1
+    weight: 1
+    ignore_for_sort: 0
+    decouple: false
+    smooth: true
+    id: 1
+    vertices:
+      - x: 887
+        y: 752
+        z: 0
+      - x: 956
+        y: 753
+        z: 0
+    decoupleVertices:
+      - x: 887
+        y: 752
+        z: 0
+      - x: 912
+        y: 752
+        z: 0
+      - x: 931
+        y: 753
+        z: 0
+      - x: 956
+        y: 753
+        z: 0
+  - toNode: PIPE1/out1
+    toNodeInput: in1
+    fromNode: PIPE1
+    fromNodeOutput: out1
+    weight: 1
+    ignore_for_sort: 0
+    decouple: false
+    smooth: true
+    id: 2
+    vertices:
+      - x: 1042
+        y: 753
+        z: 0
+      - x: 1110
+        y: 755
+        z: 0
+    decoupleVertices:
+      - x: 1042
+        y: 753
+        z: 0
+      - x: 1067
+        y: 753
+        z: 0
+      - x: 1085
+        y: 755
+        z: 0
+      - x: 1110
+        y: 755
+        z: 0
