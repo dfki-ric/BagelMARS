@@ -84,7 +84,6 @@ namespace mars {
       }
 
       BagelMARS::~BagelMARS() {
-        libManager->releaseLibrary("behavior_library");
       }
 
       void BagelMARS::reloadGraph() {
@@ -299,11 +298,13 @@ namespace mars {
               std::string cmpName1 = it->name;
               std::string cmpName2 = it->name + "/des_pos";
               std::string cmpName3 = it->name + "/des_angle";
+              std::string cmpName4 = it->name + ":out1";
               //search in the graph outputs
               for(int i=0; i<outputNames.size(); ++i) {
                 if(outputNames[i] == cmpName1 ||
                    outputNames[i] == cmpName2 ||
-                   outputNames[i] == cmpName3) {
+                   outputNames[i] == cmpName3 ||
+                   outputNames[i] == cmpName4) {
                   motorGraphSimMap[it->index] = i;
                 fprintf(stderr, "compare: %s - %s\n", outputNames[i].c_str(), cmpName1.c_str());
                 }
