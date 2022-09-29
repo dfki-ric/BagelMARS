@@ -33,11 +33,13 @@ namespace mars {
       void BagelMARS::init() {
         ConfigMap map;
 
-        if(pathExists("BagelMARS.yml")) {
-          map = ConfigMap::fromYamlFile("BagelMARS.yml");
+        configPath = control->cfg->getOrCreateProperty("Config", "config_path", ".").sValue;
+
+        if(pathExists(pathJoin(configPath, "BagelMARS.yml"))) {
+          map = ConfigMap::fromYamlFile(pathJoin(configPath, "BagelMARS.yml"));
         }
-        else if(pathExists("BagelGraphMARS.yml")) {
-          map = ConfigMap::fromYamlFile("BagelGraphMARS.yml");
+        else if(pathExists(pathJoin(configPath, "BagelGraphMARS.yml"))) {
+          map = ConfigMap::fromYamlFile(pathJoin(configPath, "BagelGraphMARS.yml"));
         }
         else {
           return;
@@ -47,14 +49,16 @@ namespace mars {
         if(map.hasKey("GraphFilename")) {
           graphFilename << map["GraphFilename"];
         }
-
+        graphFilename = pathJoin(configPath, graphFilename);
         if(map.hasKey("externNodesPath")) {
           externNodesPath << map["externNodesPath"];
         }
+        externNodesPath = pathJoin(configPath, externNodesPath);
 
         startParameters = "";
         if(map.hasKey("StartParameters")) {
           startParameters << map["StartParameters"];
+          startParameters = pathJoin(configPath, startParameters);
         }
         createMotorDBItems = false;
         if(map.hasKey("CreateMotorDBItems")) {
@@ -288,7 +292,7 @@ namespace mars {
                 id = control->dataBroker->pushData("BagelMARS", name,
                                                    dbPackage2,
                                                    this, mars::data_broker::DATA_PACKAGE_READ_WRITE_FLAG);
-                
+
                 control->dataBroker->registerSyncReceiver(this,
                                                           "BagelMARS",
                                                           name, id);
