@@ -13,6 +13,7 @@ pkg_check_modules(PKGCONFIG
                   lib_manager
                   data_broker
                   cpp_bagel_wrapper
+                  c_bagel
                   mars_interfaces
                   mars_utils
                   main_gui

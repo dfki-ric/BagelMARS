@@ -9,4 +9,5 @@
    <depend package="simulation/mars/common/gui/main_gui" />
    <depend package="simulation/configmaps" />
    <depend package="bagel/cpp_bagel_wrapper"/>
+   <depend package="bagel/c_bagel"/>
 </package>
