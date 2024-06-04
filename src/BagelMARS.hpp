@@ -15,19 +15,19 @@
 
 // set define if you want to extend the gui
 #define PLUGIN_WITH_MARS_GUI
-#include <mars/interfaces/sim/MarsPluginTemplate.h>
-#include <mars/interfaces/MARSDefs.h>
-#include <mars/data_broker/ReceiverInterface.h>
-#include <mars/data_broker/ProducerInterface.h>
-#include <mars/data_broker/DataPackageMapping.h>
-#include <mars/cfg_manager/CFGManagerInterface.h>
-#include <mars/main_gui/MenuInterface.h>
+#include <mars_interfaces/sim/MarsPluginTemplate.h>
+#include <mars_interfaces/MARSDefs.h>
+#include <data_broker/ReceiverInterface.h>
+#include <data_broker/ProducerInterface.h>
+#include <data_broker/DataPackageMapping.h>
+#include <cfg_manager/CFGManagerInterface.h>
+#include <main_gui/MenuInterface.h>
 
 #include <configmaps/ConfigData.h>
 
 #include <cpp_bagel_wrapper/BagelGraph.hpp>
-#include <mars/interfaces/sim/NodeManagerInterface.h>
-#include <mars/utils/Mutex.h>
+#include <mars_interfaces/sim/NodeManagerInterface.h>
+#include <mars_utils/Mutex.h>
 
 #include <string>
 

@@ -8,12 +8,12 @@
 
 
 #include "BagelMARS.hpp"
-#include <mars/data_broker/DataBrokerInterface.h>
-#include <mars/data_broker/DataPackage.h>
+#include <data_broker/DataBrokerInterface.h>
+#include <data_broker/DataPackage.h>
 
-#include <mars/interfaces/sim/MotorManagerInterface.h>
-#include <mars/interfaces/sim/JointManagerInterface.h>
-#include <mars/utils/misc.h>
+#include <mars_interfaces/sim/MotorManagerInterface.h>
+#include <mars_interfaces/sim/JointManagerInterface.h>
+#include <mars_utils/misc.h>
 
 #include <sys/time.h>
 
