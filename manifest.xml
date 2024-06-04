@@ -4,7 +4,7 @@
    </description>
    <depend package="simulation/lib_manager" />
    <depend package="simulation/data_broker" />
-   <depend package="simulation/mars_utils" />
+   <depend package="simulation/utils" />
    <depend package="simulation/mars2/mars_interfaces" />
    <depend package="simulation/gui_collection/main_gui" />
    <depend package="simulation/configmaps" />
