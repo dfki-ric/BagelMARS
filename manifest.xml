@@ -3,10 +3,10 @@
       A MARS plugin that can load Bagel graphs into MARS and provides the graph in- and outputs to DataBroker.
    </description>
    <depend package="simulation/lib_manager" />
-   <depend package="simulation/mars/common/data_broker" />
-   <depend package="simulation/mars/common/utils" />
-   <depend package="simulation/mars/interfaces" />
-   <depend package="simulation/mars/common/gui/main_gui" />
+   <depend package="simulation/data_broker" />
+   <depend package="simulation/mars_utils" />
+   <depend package="simulation/mars2/mars_interfaces" />
+   <depend package="simulation/gui_collection/main_gui" />
    <depend package="simulation/configmaps" />
    <depend package="bagel/cpp_bagel_wrapper"/>
    <depend package="bagel/c_bagel"/>
