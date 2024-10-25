@@ -95,6 +95,7 @@ namespace mars {
         std::map<unsigned long, unsigned long> motorForceMap;
         std::map<unsigned long, unsigned long> motorGraphSimMap;
         std::map<unsigned long, unsigned long> motorTorqueGraphSimMap;
+        std::map<unsigned long, unsigned long> motorMaxTorqueGraphSimMap;
         std::map<std::string, size_t> mapInputValues;
 
         interfaces::NodeData conveyor;

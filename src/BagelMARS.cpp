@@ -191,6 +191,11 @@ namespace mars {
           for(it=motorTorqueGraphSimMap.begin();
               it!=motorTorqueGraphSimMap.end();
               ++it) {
+            control->motors->setMotorFFTorque(it->first, outputValues[it->second]);
+          }
+          for(it=motorMaxTorqueGraphSimMap.begin();
+              it!=motorMaxTorqueGraphSimMap.end();
+              ++it) {
             control->motors->setMaxTorque(it->first, outputValues[it->second]);
           }
           for(unsigned int i=0; i<outputValues.size(); ++i) {
@@ -267,6 +272,7 @@ namespace mars {
 
           motorGraphSimMap.clear();
           motorTorqueGraphSimMap.clear();
+          motorMaxTorqueGraphSimMap.clear();
           control->motors->getListMotors(&allMotors);
           for(it=allMotors.begin(); it!=allMotors.end(); ++it) {
             if(motorMap.find(it->index) == motorMap.end()) {
@@ -312,10 +318,15 @@ namespace mars {
                   motorGraphSimMap[it->index] = i;
                 fprintf(stderr, "compare: %s - %s\n", outputNames[i].c_str(), cmpName1.c_str());
                 }
-                std::string name2 = "torque;";
-                name2.append(it->name);
+                std::string name2 = it->name + "/ff_torque";
+                //name2.append(it->name);
                 if(outputNames[i] == name2) {
                   motorTorqueGraphSimMap[it->index] = i;
+                }
+                std::string name3 = it->name + "/max_torque";
+                //name2.append(it->name);
+                if(outputNames[i] == name3) {
+                  motorMaxTorqueGraphSimMap[it->index] = i;
                 }
               }
             }
