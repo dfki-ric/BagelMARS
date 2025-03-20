@@ -101,6 +101,7 @@ namespace mars {
         interfaces::NodeData conveyor;
         unsigned long conveyorPosZId, conveyorSpeedXId;
         std::string graphFilename, externNodesPath, startParameters;
+        std::string outputPrefix;
         double timeStep;
         utils::Mutex mutex;
         void reloadGraph();

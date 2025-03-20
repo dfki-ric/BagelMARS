@@ -64,6 +64,10 @@ namespace mars {
         if(map.hasKey("CreateMotorDBItems")) {
           createMotorDBItems = map["CreateMotorDBItems"];
         }
+        outputPrefix = "";
+        if(map.hasKey("OutputPrefix")) {
+          outputPrefix << map["OutputPrefix"];
+        }
         reloadGraph();
 
         // register as producer
@@ -311,21 +315,20 @@ namespace mars {
               std::string cmpName4 = it->name + ":out1";
               //search in the graph outputs
               for(int i=0; i<outputNames.size(); ++i) {
-                if(outputNames[i] == cmpName1 ||
-                   outputNames[i] == cmpName2 ||
-                   outputNames[i] == cmpName3 ||
-                   outputNames[i] == cmpName4) {
+                if(outputPrefix+outputNames[i] == cmpName1 ||
+                   outputPrefix+outputNames[i] == cmpName2 ||
+                   outputPrefix+outputNames[i] == cmpName3 ||
+                   outputPrefix+outputNames[i] == cmpName4) {
                   motorGraphSimMap[it->index] = i;
-                fprintf(stderr, "compare: %s - %s\n", outputNames[i].c_str(), cmpName1.c_str());
                 }
                 std::string name2 = it->name + "/ff_torque";
                 //name2.append(it->name);
-                if(outputNames[i] == name2) {
+                if(outputPrefix+outputNames[i] == name2) {
                   motorTorqueGraphSimMap[it->index] = i;
                 }
                 std::string name3 = it->name + "/max_torque";
                 //name2.append(it->name);
-                if(outputNames[i] == name3) {
+                if(outputPrefix+outputNames[i] == name3) {
                   motorMaxTorqueGraphSimMap[it->index] = i;
                 }
               }
